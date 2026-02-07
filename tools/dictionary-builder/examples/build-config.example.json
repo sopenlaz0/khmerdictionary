@@ -1,0 +1,27 @@
+{
+  "baseDatabasePath": "/Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios/KhmerDictionary/Resources/Data/dict.db",
+  "outputDatabasePath": "/Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios/tools/dictionary-builder/build/dict-v2.db",
+  "sources": [
+    {
+      "id": "kaikki-km",
+      "type": "kaikki-jsonl",
+      "path": "/absolute/path/to/kaikki.org-dictionary-Khmer-words.jsonl",
+      "license": "CC BY-SA 3.0; GFDL",
+      "attribution": "Wiktionary contributors",
+      "sourceURL": "https://kaikki.org/dictionary/Khmer/index.html",
+      "priority": 80
+    },
+    {
+      "id": "custom-tsv",
+      "type": "tsv",
+      "path": "/absolute/path/to/khmer-extra.tsv",
+      "license": "Your chosen license",
+      "attribution": "Data owner",
+      "sourceURL": "https://example.com/source",
+      "priority": 90,
+      "delimiter": "\t",
+      "wordColumn": 0,
+      "definitionColumn": 1
+    }
+  ]
+}
