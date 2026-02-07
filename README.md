@@ -18,21 +18,21 @@ Swift-only iOS app for Khmer dictionary lookup and offline usage.
 ## Run In Xcode
 
 1. Open:
-   `/Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios/KhmerDictionary.xcodeproj`
+   `/Users/username/Documents/hobby/dictionary/khmerdictionary-ios/KhmerDictionary.xcodeproj`
 2. Select scheme: `KhmerDictionary`
 3. Run on an iPhone simulator or device
 
 ## Run Tests (CLI)
 
 ```bash
-cd /Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios
+cd /Users/username/Documents/hobby/dictionary/khmerdictionary-ios
 xcodebuild -scheme KhmerDictionary -project KhmerDictionary.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 17' test
 ```
 
 ## Optional: Regenerate Project
 
 ```bash
-cd /Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios
+cd /Users/username/Documents/hobby/dictionary/khmerdictionary-ios
 xcodegen generate
 ```
 
