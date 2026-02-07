@@ -57,3 +57,11 @@ xcodegen generate
 
 Signing payload format:
 `schemaVersion\nversionCode\nversionName\npublishedAt\nurl\nsha256\nsizeBytes`
+
+
+![simulator_screenshot_01E92583-F8FB-46A2-B4C1-0BAA3AA7DBAA](https://github.com/user-attachments/assets/7e114f86-48bd-4cf9-89b3-6c21d4a910a9)
+
+<img width="1206" height="2622" alt="simulator_screenshot_AB6679EF-C83D-447B-9CF3-B2B2526F5DAD" src="https://github.com/user-attachments/assets/89d95789-0480-4b52-9ba0-80d52e1f197c" />
+<img width="1206" height="2622" alt="simulator_screenshot_B4DDF0C2-5739-4A10-861D-EFFCE18DB447" src="https://github.com/user-attachments/assets/5a514f1d-0761-4877-8964-8c744cea6343" />
+<img width="1206" height="2622" alt="simulator_screenshot_FC934181-E4B4-4BA5-84C1-E0EF5E0248D2" src="https://github.com/user-attachments/assets/b2ea875b-fc66-46b4-9314-a1cf54b0cd38" />
+
