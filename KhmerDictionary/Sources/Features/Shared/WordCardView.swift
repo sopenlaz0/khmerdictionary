@@ -38,7 +38,7 @@ struct WordCardView: View {
                     .fill(AppTheme.cardBackground)
                     .overlay {
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .strokeBorder(Color.white.opacity(0.55), lineWidth: 1)
+                            .strokeBorder(AppTheme.cardStroke, lineWidth: 1)
                     }
                     .shadow(color: Color.black.opacity(0.05), radius: 8, y: 2)
             }

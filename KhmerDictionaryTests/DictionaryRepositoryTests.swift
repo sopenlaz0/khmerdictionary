@@ -13,7 +13,7 @@ final class DictionaryRepositoryTests: XCTestCase {
         let databaseURL = try makeSeededDatabase()
         let repository = try GRDBDictionaryRepository(databaseURL: databaseURL, appliedVersionCode: nil)
 
-        let searchResults = try await repository.searchWords(rawSearchTerm: "ក", limit: 20)
+        let searchResults = try await repository.searchWords(rawSearchTerm: "ក", limit: 20, offset: 0)
         XCTAssertEqual(searchResults.count, 2)
         XCTAssertEqual(searchResults.map(\.word), ["កក", "កក់"])
 
@@ -43,6 +43,17 @@ final class DictionaryRepositoryTests: XCTestCase {
         try await repository.setDictionaryVersionCode(9)
         let updatedVersion = try await repository.currentDictionaryVersionCode()
         XCTAssertEqual(updatedVersion, 9)
+    }
+
+    func testRepositorySearchSupportsPagination() async throws {
+        let databaseURL = try makeSeededDatabase()
+        let repository = try GRDBDictionaryRepository(databaseURL: databaseURL, appliedVersionCode: nil)
+
+        let pageOne = try await repository.searchWords(rawSearchTerm: "", limit: 2, offset: 0)
+        XCTAssertEqual(pageOne.map(\.word), ["កក", "កក់"])
+
+        let pageTwo = try await repository.searchWords(rawSearchTerm: "", limit: 2, offset: 2)
+        XCTAssertEqual(pageTwo.map(\.word), ["ខ្មែរ"])
     }
 
     private func makeSeededDatabase() throws -> URL {

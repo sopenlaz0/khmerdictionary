@@ -7,11 +7,16 @@ private struct WordRoute: Hashable, Identifiable {
 struct DictionaryView: View {
     @EnvironmentObject private var session: AppSession
 
+    private let pageSize = 90
+
     @State private var query = ""
     @State private var rows: [WordSummary] = []
     @State private var errorText: String?
     @State private var selectedWord: WordRoute?
     @State private var searchTask: Task<Void, Never>?
+    @State private var nextOffset = 0
+    @State private var hasMoreRows = true
+    @State private var isLoadingPage = false
 
     var body: some View {
         List {
@@ -36,7 +41,7 @@ struct DictionaryView: View {
                     .listRowBackground(Color.clear)
             }
 
-            if rows.isEmpty {
+            if rows.isEmpty, !isLoadingPage, errorText == nil {
                 VStack(spacing: 8) {
                     Text("មិនមានលទ្ធផល")
                         .font(KhmerFont.bold(KhmerTypography.emptyStateTitle))
@@ -57,7 +62,19 @@ struct DictionaryView: View {
                     onOpen: { openWord(item) },
                     onToggleBookmark: { toggleBookmark(for: item) }
                 )
+                .onAppear {
+                    loadMoreIfNeeded(currentWordID: item.id)
+                }
                 .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                .listRowBackground(Color.clear)
+            }
+
+            if isLoadingPage, !rows.isEmpty {
+                HStack {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
                 .listRowBackground(Color.clear)
             }
         }
@@ -65,7 +82,7 @@ struct DictionaryView: View {
         .scrollContentBackground(.hidden)
         .background(
             LinearGradient(
-                colors: [Color(red: 0.91, green: 0.95, blue: 1.0), AppTheme.background],
+                colors: [AppTheme.heroGradientStart, AppTheme.background],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
@@ -84,13 +101,13 @@ struct DictionaryView: View {
         }
         .dictionarySearch(text: $query)
         .refreshable {
-            await loadRows()
+            await reloadFromStart()
         }
         .onChange(of: query) { _, _ in
             scheduleSearch()
         }
         .task {
-            await loadRows()
+            await reloadFromStart()
         }
         .navigationDestination(item: $selectedWord) { route in
             WordDetailView(wordID: route.id)
@@ -102,17 +119,60 @@ struct DictionaryView: View {
         searchTask = Task {
             try? await Task.sleep(for: .milliseconds(220))
             guard !Task.isCancelled else { return }
-            await loadRows()
+            await reloadFromStart()
         }
     }
 
     @MainActor
-    private func loadRows() async {
+    private func reloadFromStart() async {
+        nextOffset = 0
+        hasMoreRows = true
+        rows = []
+        await loadNextPage()
+    }
+
+    @MainActor
+    private func loadNextPage() async {
+        guard !isLoadingPage, hasMoreRows else { return }
+
+        let requestedQuery = query
+        let currentOffset = nextOffset
+        isLoadingPage = true
+
         do {
+            let page = try await session.repository.searchWords(
+                rawSearchTerm: requestedQuery,
+                limit: pageSize,
+                offset: currentOffset
+            )
+
+            guard requestedQuery == query else {
+                isLoadingPage = false
+                return
+            }
+
             errorText = nil
-            rows = try await session.repository.searchWords(rawSearchTerm: query, limit: 90)
+            rows.append(contentsOf: page)
+            nextOffset += page.count
+            hasMoreRows = page.count == pageSize
         } catch {
+            guard requestedQuery == query else {
+                isLoadingPage = false
+                return
+            }
+
             errorText = error.localizedDescription
+            hasMoreRows = false
+        }
+
+        isLoadingPage = false
+    }
+
+    private func loadMoreIfNeeded(currentWordID: Int64) {
+        guard !rows.isEmpty, hasMoreRows, !isLoadingPage else { return }
+        guard rows.last?.id == currentWordID else { return }
+        Task {
+            await loadNextPage()
         }
     }
 

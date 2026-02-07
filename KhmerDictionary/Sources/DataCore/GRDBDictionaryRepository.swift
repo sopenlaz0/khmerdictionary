@@ -21,7 +21,7 @@ actor GRDBDictionaryRepository: DictionaryRepository {
         }
     }
 
-    func searchWords(rawSearchTerm: String, limit: Int = 90) async throws -> [WordSummary] {
+    func searchWords(rawSearchTerm: String, limit: Int = 90, offset: Int = 0) async throws -> [WordSummary] {
         let pattern = SearchQuery.prefixPattern(for: rawSearchTerm)
         let rows = try await dbPool.read { db in
             try RawWordSummary.fetchAll(
@@ -36,8 +36,9 @@ actor GRDBDictionaryRepository: DictionaryRepository {
                     WHERE d.word LIKE ? COLLATE NOCASE
                     ORDER BY d.word COLLATE NOCASE ASC
                     LIMIT ?
+                    OFFSET ?
                 """,
-                arguments: [pattern, limit]
+                arguments: [pattern, limit, offset]
             )
         }
 
