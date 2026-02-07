@@ -58,33 +58,4 @@ xcodegen generate
 Signing payload format:
 `schemaVersion\nversionCode\nversionName\npublishedAt\nurl\nsha256\nsizeBytes`
 
-
-
----
-
-```html
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/7e114f86-48bd-4cf9-89b3-6c21d4a910a9"
-       width="360"
-       alt="Simulator screenshot" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/89d95789-0480-4b52-9ba0-80d52e1f197c"
-       width="320"
-       alt="Simulator screenshot" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5a514f1d-0761-4877-8964-8c744cea6343"
-       width="320"
-       alt="Simulator screenshot" />
-</p>
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b2ea875b-fc66-46b4-9314-a1cf54b0cd38"
-       width="320"
-       alt="Simulator screenshot" />
-</p>
-
-
+<p align="center"> <img src="https://github.com/user-attachments/assets/7e114f86-48bd-4cf9-89b3-6c21d4a910a9" width="360" alt="Simulator screenshot 1"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/89d95789-0480-4b52-9ba0-80d52e1f197c" width="320" alt="Simulator screenshot 2"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/5a514f1d-0761-4877-8964-8c744cea6343" width="320" alt="Simulator screenshot 3"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/b2ea875b-fc66-46b4-9314-a1cf54b0cd38" width="320" alt="Simulator screenshot 4"> </p>
