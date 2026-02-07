@@ -3,20 +3,20 @@ import XCTest
 
 final class KhmerTypographyTests: XCTestCase {
     func testDictionaryScreenTypeScale() {
-        XCTAssertEqual(KhmerTypography.dictionaryHeroTitle, 30)
-        XCTAssertEqual(KhmerTypography.dictionaryHeroSubtitle, 17)
-        XCTAssertEqual(KhmerTypography.emptyStateTitle, 20)
+        XCTAssertEqual(KhmerTypography.dictionaryHeroTitle, 24)
+        XCTAssertEqual(KhmerTypography.dictionaryHeroSubtitle, 16)
+        XCTAssertEqual(KhmerTypography.emptyStateTitle, 17)
         XCTAssertEqual(KhmerTypography.emptyStateBody, 15)
     }
 
     func testListCardTypeScale() {
-        XCTAssertEqual(KhmerTypography.listWordTitle, 24)
-        XCTAssertEqual(KhmerTypography.listPreviewBody, 16)
+        XCTAssertEqual(KhmerTypography.listWordTitle, 17)
+        XCTAssertEqual(KhmerTypography.listPreviewBody, 15)
     }
 
     func testWordDetailTypeScale() {
-        XCTAssertEqual(KhmerTypography.detailWordTitle, 36)
-        XCTAssertEqual(KhmerTypography.detailBookmarkLabel, 20)
-        XCTAssertEqual(KhmerTypography.detailDefinitionBody, 24)
+        XCTAssertEqual(KhmerTypography.detailWordTitle, 28)
+        XCTAssertEqual(KhmerTypography.detailBookmarkLabel, 17)
+        XCTAssertEqual(KhmerTypography.detailDefinitionBody, 17)
     }
 }

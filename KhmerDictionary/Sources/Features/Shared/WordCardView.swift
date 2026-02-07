@@ -16,7 +16,7 @@ struct WordCardView: View {
 
                     Text(word.previewDefinition)
                         .font(KhmerFont.regular(KhmerTypography.listPreviewBody))
-                        .lineSpacing(3)
+                        .lineSpacing(2)
                         .foregroundStyle(AppTheme.secondaryText)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)

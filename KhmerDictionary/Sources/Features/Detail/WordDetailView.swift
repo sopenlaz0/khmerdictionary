@@ -30,7 +30,7 @@ struct WordDetailView: View {
                     Text(word.definition)
                         .font(KhmerFont.regular(KhmerTypography.detailDefinitionBody))
                         .foregroundStyle(Color(red: 0.15, green: 0.24, blue: 0.36))
-                        .lineSpacing(8)
+                        .lineSpacing(4)
                         .textSelection(.enabled)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
