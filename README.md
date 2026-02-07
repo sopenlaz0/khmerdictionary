@@ -1,68 +1,42 @@
-# KhmerDict (Expo)
+# Khmer Dictionary (Native iOS)
 
-Modernized Khmer Dictionary app using React Native + Expo, migrated from the legacy Android codebase.
+Swift-only iOS app for Khmer dictionary lookup and offline usage.
 
-## Tech stack
+## Stack
 
-- Expo SDK 54 (React Native 0.81)
-- Expo Router
-- Expo SQLite (bundled preloaded DB)
-- React Native Paper (Material 3)
-- iOS glass-style surfaces via `expo-blur`
+- Swift 6
+- SwiftUI
+- GRDB + SQLite
+- CryptoKit-based verification for signed dictionary updates
+- XcodeGen (`project.yml`) for project generation
 
-## Run locally
+## Requirements
 
-1. Install dependencies
+- Xcode 17+
+- iOS 26 SDK
 
-```bash
-npm install
-```
+## Run In Xcode
 
-2. Start dev server
+1. Open:
+   `/Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios/KhmerDictionary.xcodeproj`
+2. Select scheme: `KhmerDictionary`
+3. Run on an iPhone simulator or device
 
-```bash
-npm run start
-```
-
-3. Run on platform
+## Run Tests (CLI)
 
 ```bash
-npm run ios
-npm run android
-npm run web
+cd /Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios
+xcodebuild -scheme KhmerDictionary -project KhmerDictionary.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 17' test
 ```
 
-## Validation
+## Optional: Regenerate Project
 
 ```bash
-npx expo-doctor
-npx tsc --noEmit
-npm test
+cd /Users/sopen/Documents/hobby/dictionary/khmerdictionary-ios
+xcodegen generate
 ```
 
-## Notes
-
-- Recommended Node version: `20.19.4` or newer patch in the 20.x line.
-- Current workspace is on `20.19.3`, which triggers `EBADENGINE` warnings from RN/Metro but still installs.
-- Dictionary database and Khmer fonts were migrated from the legacy repo into `assets/data` and `assets/fonts`.
-
-## Current feature parity slice
-
-- Search words from local SQLite dictionary
-- View word definition
-- Bookmark words
-- View bookmarked words
-- View history of opened words
-- Phase 2 update pipeline: signed manifest validation + SHA-256 DB verification + staged apply on next app restart
-
-## Phase 2 Setup
-
-Configure your update source in `/Users/sopen/Documents/hobby/dictionary/khmerdict/app.json`:
-
-- `expo.extra.updates.manifestUrl`: HTTPS URL to manifest JSON
-- `expo.extra.updates.publicKeyHex`: ed25519 public key in 64-char hex
-
-Manifest format:
+## Dictionary Update Manifest Contract
 
 ```json
 {
@@ -81,13 +55,5 @@ Manifest format:
 }
 ```
 
-Signature payload format (newline-delimited):
-
-`schemaVersion\\nversionCode\\nversionName\\npublishedAt\\nurl\\nsha256\\nsizeBytes`
-
-## Next milestones
-
-- Add theme controls (iOS glass emphasis vs Android Material emphasis)
-- Add integration tests for search/detail/bookmark/history flows
-- Add CI workflow for test + typecheck + doctor
-# khmerdictionary
+Signing payload format:
+`schemaVersion\nversionCode\nversionName\npublishedAt\nurl\nsha256\nsizeBytes`
