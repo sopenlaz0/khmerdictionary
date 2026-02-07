@@ -1,0 +1,77 @@
+name: KhmerDictionary
+options:
+  minimumXcodeGenVersion: 2.44.1
+configs:
+  Debug: debug
+  Release: release
+packages:
+  GRDB:
+    url: https://github.com/groue/GRDB.swift.git
+    from: 7.4.0
+targets:
+  KhmerDictionary:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - KhmerDictionary/Sources
+      - path: KhmerDictionary/Resources
+        buildPhase: resources
+    dependencies:
+      - package: GRDB
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sopenlaz0.khmerdictionary
+        PRODUCT_NAME: KhmerDictionary
+        SWIFT_VERSION: 6.0
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: KhmerDictionary/Info.plist
+        IPHONEOS_DEPLOYMENT_TARGET: 26.0
+        TARGETED_DEVICE_FAMILY: 1
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGNING_ALLOWED: NO
+        SWIFT_STRICT_CONCURRENCY: complete
+        OTHER_SWIFT_FLAGS: "$(inherited) -enable-upcoming-feature ExistentialAny"
+  KhmerDictionaryTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - KhmerDictionaryTests
+    dependencies:
+      - target: KhmerDictionary
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sopenlaz0.khmerdictionary.tests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 6.0
+        CODE_SIGNING_ALLOWED: NO
+        SWIFT_STRICT_CONCURRENCY: complete
+  KhmerDictionaryUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - KhmerDictionaryUITests
+    dependencies:
+      - target: KhmerDictionary
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sopenlaz0.khmerdictionary.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 6.0
+        CODE_SIGNING_ALLOWED: NO
+        SWIFT_STRICT_CONCURRENCY: complete
+schemes:
+  KhmerDictionary:
+    build:
+      targets:
+        KhmerDictionary: all
+        KhmerDictionaryTests: [test]
+        KhmerDictionaryUITests: [test]
+    test:
+      targets:
+        - KhmerDictionaryTests
+        - KhmerDictionaryUITests
