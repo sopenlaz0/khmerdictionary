@@ -18,10 +18,10 @@ struct DictionaryView: View {
             Section {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("វចនានុក្រមខ្មែរ")
-                        .font(KhmerFont.display(34))
+                        .font(KhmerFont.display(KhmerTypography.dictionaryHeroTitle))
                         .foregroundStyle(AppTheme.accent)
                     Text("ស្វែងរកដោយពាក្យដើម")
-                        .font(KhmerFont.regular(18))
+                        .font(KhmerFont.regular(KhmerTypography.dictionaryHeroSubtitle))
                         .foregroundStyle(AppTheme.secondaryText)
                 }
                 .padding(.vertical, 8)
@@ -39,10 +39,10 @@ struct DictionaryView: View {
             if rows.isEmpty {
                 VStack(spacing: 8) {
                     Text("មិនមានលទ្ធផល")
-                        .font(KhmerFont.bold(22))
+                        .font(KhmerFont.bold(KhmerTypography.emptyStateTitle))
                         .foregroundStyle(AppTheme.secondaryText)
                     Text("សូមសាកល្បងស្វែងរកដោយពាក្យខ្លី ឬការបញ្ចូលខុសគ្នាបន្តិច។")
-                        .font(KhmerFont.regular(17))
+                        .font(KhmerFont.regular(KhmerTypography.emptyStateBody))
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
                 }
@@ -82,11 +82,7 @@ struct DictionaryView: View {
                 .accessibilityLabel("Settings")
             }
         }
-        .searchable(
-            text: $query,
-            placement: .navigationBarDrawer(displayMode: .always),
-            prompt: Text("ស្វែងរកពាក្យ")
-        )
+        .dictionarySearch(text: $query)
         .refreshable {
             await loadRows()
         }
@@ -150,6 +146,39 @@ struct DictionaryView: View {
                     errorText = error.localizedDescription
                 }
             }
+        }
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func dictionarySearch(text: Binding<String>) -> some View {
+        if DictionarySearchPlacementPolicy.prefersNavigationBarDrawerAlways {
+            searchable(
+                text: text,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: Text("ស្វែងរកពាក្យ")
+            )
+                .dictionarySearchToolbarBehavior()
+        } else if DictionarySearchPlacementPolicy.usesAdaptiveSystemPlacement {
+            searchable(text: text, prompt: Text("ស្វែងរកពាក្យ"))
+                .dictionarySearchToolbarBehavior()
+        } else {
+            searchable(
+                text: text,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: Text("ស្វែងរកពាក្យ")
+            )
+            .dictionarySearchToolbarBehavior()
+        }
+    }
+
+    @ViewBuilder
+    func dictionarySearchToolbarBehavior() -> some View {
+        if DictionarySearchPlacementPolicy.usesBottomMinimizedSearchToolbar {
+            searchToolbarBehavior(.minimize)
+        } else {
+            self
         }
     }
 }

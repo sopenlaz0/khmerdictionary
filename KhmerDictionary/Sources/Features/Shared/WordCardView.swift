@@ -10,13 +10,13 @@ struct WordCardView: View {
             HStack(alignment: .top, spacing: 12) {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(word.word)
-                        .font(KhmerFont.bold(32))
+                        .font(KhmerFont.bold(KhmerTypography.listWordTitle))
                         .foregroundStyle(AppTheme.accent)
                         .lineLimit(1)
 
                     Text(word.previewDefinition)
-                        .font(KhmerFont.regular(24))
-                        .lineSpacing(4)
+                        .font(KhmerFont.regular(KhmerTypography.listPreviewBody))
+                        .lineSpacing(3)
                         .foregroundStyle(AppTheme.secondaryText)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)

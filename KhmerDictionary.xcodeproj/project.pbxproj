@@ -16,8 +16,10 @@
 		2D6176A8E4C74A7411D04FE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF320E7AFDED3AC3F12535A7 /* SettingsView.swift */; };
 		32BF9C9D8A6AB0CCB08FA768 /* WordCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D98DF979B8B44007ABA8E /* WordCardView.swift */; };
 		34AFD2F2F77FAE5A6AB116C2 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691BA14768DEB8BCC6FE80A /* RootTabView.swift */; };
+		36479732D90309638E08F4C1 /* KhmerTypographyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A171A495AA39E0539336C337 /* KhmerTypographyTests.swift */; };
 		39A79074731E517966076C05 /* tacteing.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF5743850129501E05AD5B00 /* tacteing.ttf */; };
 		3CAD0A732C990608393BF531 /* KhmerFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAECBA0D9454300C8EA3D682 /* KhmerFont.swift */; };
+		428EF87BE28EF9913CE524F0 /* DictionarySearchPlacementPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F35EC1CF9D7EE85A828FB9 /* DictionarySearchPlacementPolicy.swift */; };
 		4FCA0DB35B7F5CC60693E6AC /* AppPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54597F2C12F6CE149AE8441B /* AppPaths.swift */; };
 		5D6FCC21124BFC8AA0948DE4 /* KhmerDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102E7CBE3E9598024056BE52 /* KhmerDictionaryUITests.swift */; };
 		629104D4A86122FFF4F3BF80 /* DictionaryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF172362ED27D5A34830F40 /* DictionaryRepositoryTests.swift */; };
@@ -25,6 +27,7 @@
 		6E9F0E3AF34F0621D455CD60 /* suwannaphum_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00BE4EE3415BBA3354056DAF /* suwannaphum_regular.ttf */; };
 		72B6C845C5076EDA6CDAEED9 /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05309A585843DD2E46FC85 /* SearchQuery.swift */; };
 		779CD9F6FCE735ACC2606244 /* DefinitionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3A71111B512ED84801E00 /* DefinitionFormatter.swift */; };
+		7840D29087EBDAFC5EE5297C /* KhmerTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247E2F1FD66B4EFEAFE340C1 /* KhmerTypography.swift */; };
 		78E11123FC077294A97440A7 /* ManifestSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABBC2E7B36A1740DE5AB8D5 /* ManifestSecurity.swift */; };
 		80F3A47D81C0C8149B0573C5 /* suwannaphum_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56634C9E32386C3D5BD64080 /* suwannaphum_light.ttf */; };
 		82C9B363705013D6F0AB1828 /* GRDBDictionaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C53FF64B14518B8402B91 /* GRDBDictionaryRepository.swift */; };
@@ -34,6 +37,7 @@
 		92A1B0A4C3B48145BA122136 /* DefinitionFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CDF1F1FE752A243FABBDA7 /* DefinitionFormatterTests.swift */; };
 		999CA8860009334A26C7614B /* StagedUpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809733803AE049C174E5EA4 /* StagedUpdateStore.swift */; };
 		9A98C306A4FA1434E2976B4C /* ManifestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E0762F0405C607F0CB118D /* ManifestParser.swift */; };
+		9B4FD09B6227877D519B8FEA /* SearchPlacementPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C2B1B4238D0821807579A /* SearchPlacementPolicyTests.swift */; };
 		B34E14C97B525FBFEE24ABB3 /* DatabaseUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EC520C9CA5833CBFB9B167 /* DatabaseUpdateService.swift */; };
 		BDA45D70B89355F8E2539CA6 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FBD1B0A82C13B1DB6E8061 /* AppSession.swift */; };
 		C0551AAE1CD9DBDFDA26E16D /* DatabaseUpdateManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA56E39778ACE6D74094E7 /* DatabaseUpdateManifest.swift */; };
@@ -66,11 +70,14 @@
 		00BE4EE3415BBA3354056DAF /* suwannaphum_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = suwannaphum_regular.ttf; sourceTree = "<group>"; };
 		04D3A71111B512ED84801E00 /* DefinitionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionFormatter.swift; sourceTree = "<group>"; };
 		0691BA14768DEB8BCC6FE80A /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		0E4C2B1B4238D0821807579A /* SearchPlacementPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacementPolicyTests.swift; sourceTree = "<group>"; };
 		102E7CBE3E9598024056BE52 /* KhmerDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhmerDictionaryUITests.swift; sourceTree = "<group>"; };
 		1A05309A585843DD2E46FC85 /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
 		1C927432EC2E9C860D2916E8 /* KhmerDictionary.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KhmerDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCFA7C379ACEA93B61B258D /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		1DEA783D8701039D2FF242D5 /* KhmerDictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhmerDictionaryApp.swift; sourceTree = "<group>"; };
+		247E2F1FD66B4EFEAFE340C1 /* KhmerTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhmerTypography.swift; sourceTree = "<group>"; };
+		33F35EC1CF9D7EE85A828FB9 /* DictionarySearchPlacementPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionarySearchPlacementPolicy.swift; sourceTree = "<group>"; };
 		34C509B7B3AD95879F9473F9 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		3ABBC2E7B36A1740DE5AB8D5 /* ManifestSecurity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestSecurity.swift; sourceTree = "<group>"; };
 		3AF172362ED27D5A34830F40 /* DictionaryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepositoryTests.swift; sourceTree = "<group>"; };
@@ -86,6 +93,7 @@
 		7809733803AE049C174E5EA4 /* StagedUpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagedUpdateStore.swift; sourceTree = "<group>"; };
 		81D5B37740204153A3893EAF /* ManifestParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestParsingTests.swift; sourceTree = "<group>"; };
 		8405AB7DD95EBB4F9E44A333 /* suwannaphum_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = suwannaphum_bold.ttf; sourceTree = "<group>"; };
+		A171A495AA39E0539336C337 /* KhmerTypographyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhmerTypographyTests.swift; sourceTree = "<group>"; };
 		A4CDF1F1FE752A243FABBDA7 /* DefinitionFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionFormatterTests.swift; sourceTree = "<group>"; };
 		AF5743850129501E05AD5B00 /* tacteing.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tacteing.ttf; sourceTree = "<group>"; };
 		B14C53FF64B14518B8402B91 /* GRDBDictionaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRDBDictionaryRepository.swift; sourceTree = "<group>"; };
@@ -129,7 +137,9 @@
 				5E7005D79585C473255C963F /* DatabaseBootstrapperTests.swift */,
 				A4CDF1F1FE752A243FABBDA7 /* DefinitionFormatterTests.swift */,
 				3AF172362ED27D5A34830F40 /* DictionaryRepositoryTests.swift */,
+				A171A495AA39E0539336C337 /* KhmerTypographyTests.swift */,
 				81D5B37740204153A3893EAF /* ManifestParsingTests.swift */,
+				0E4C2B1B4238D0821807579A /* SearchPlacementPolicyTests.swift */,
 				B3B3992C566E094F540EBA24 /* SignatureSecurityTests.swift */,
 			);
 			path = KhmerDictionaryTests;
@@ -162,6 +172,7 @@
 		69509FA23D032F4ECF92DDD7 /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				33F35EC1CF9D7EE85A828FB9 /* DictionarySearchPlacementPolicy.swift */,
 				1CCFA7C379ACEA93B61B258D /* DictionaryView.swift */,
 			);
 			path = Dictionary;
@@ -228,6 +239,7 @@
 			children = (
 				BEDA2516856A907807138C23 /* AppTheme.swift */,
 				CAECBA0D9454300C8EA3D682 /* KhmerFont.swift */,
+				247E2F1FD66B4EFEAFE340C1 /* KhmerTypography.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -450,11 +462,13 @@
 				B34E14C97B525FBFEE24ABB3 /* DatabaseUpdateService.swift in Sources */,
 				779CD9F6FCE735ACC2606244 /* DefinitionFormatter.swift in Sources */,
 				13F7C8A26AD12633B815219C /* DictionaryRepository.swift in Sources */,
+				428EF87BE28EF9913CE524F0 /* DictionarySearchPlacementPolicy.swift in Sources */,
 				0264E3590927E06DC4282FE0 /* DictionaryView.swift in Sources */,
 				82C9B363705013D6F0AB1828 /* GRDBDictionaryRepository.swift in Sources */,
 				DBC1043B9C9636506A8EA5FB /* HistoryView.swift in Sources */,
 				DA680FA174AD388D1528137B /* KhmerDictionaryApp.swift in Sources */,
 				3CAD0A732C990608393BF531 /* KhmerFont.swift in Sources */,
+				7840D29087EBDAFC5EE5297C /* KhmerTypography.swift in Sources */,
 				9A98C306A4FA1434E2976B4C /* ManifestParser.swift in Sources */,
 				78E11123FC077294A97440A7 /* ManifestSecurity.swift in Sources */,
 				FF7D0D2B910C98F1E9E02FBB /* Models.swift in Sources */,
@@ -475,7 +489,9 @@
 				864ED5BCC632082A6614DF81 /* DatabaseBootstrapperTests.swift in Sources */,
 				92A1B0A4C3B48145BA122136 /* DefinitionFormatterTests.swift in Sources */,
 				629104D4A86122FFF4F3BF80 /* DictionaryRepositoryTests.swift in Sources */,
+				36479732D90309638E08F4C1 /* KhmerTypographyTests.swift in Sources */,
 				128D10BCDBD8B7B469D46EA4 /* ManifestParsingTests.swift in Sources */,
+				9B4FD09B6227877D519B8FEA /* SearchPlacementPolicyTests.swift in Sources */,
 				0F936564F117DE42870E9D1F /* SignatureSecurityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
