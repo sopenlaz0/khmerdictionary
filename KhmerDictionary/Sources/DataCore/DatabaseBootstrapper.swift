@@ -29,7 +29,7 @@ enum DatabaseBootstrapper {
     }
 
     private static func copyBundledDatabase(to destinationURL: URL, fileManager: FileManager) throws {
-        guard let bundledURL = Bundle.main.url(forResource: "dict", withExtension: "db", subdirectory: "Data") else {
+        guard let bundledURL = resolveBundledDatabaseURL(in: .main) else {
             throw NSError(
                 domain: "KhmerDictionary.DatabaseBootstrapper",
                 code: 1001,
@@ -42,5 +42,12 @@ enum DatabaseBootstrapper {
         }
 
         try fileManager.copyItem(at: bundledURL, to: destinationURL)
+    }
+
+    static func resolveBundledDatabaseURL(in bundle: Bundle) -> URL? {
+        if let url = bundle.url(forResource: "dict", withExtension: "db", subdirectory: "Data") {
+            return url
+        }
+        return bundle.url(forResource: "dict", withExtension: "db")
     }
 }

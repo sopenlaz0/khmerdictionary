@@ -28,6 +28,7 @@
 		78E11123FC077294A97440A7 /* ManifestSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABBC2E7B36A1740DE5AB8D5 /* ManifestSecurity.swift */; };
 		80F3A47D81C0C8149B0573C5 /* suwannaphum_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56634C9E32386C3D5BD64080 /* suwannaphum_light.ttf */; };
 		82C9B363705013D6F0AB1828 /* GRDBDictionaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14C53FF64B14518B8402B91 /* GRDBDictionaryRepository.swift */; };
+		864ED5BCC632082A6614DF81 /* DatabaseBootstrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7005D79585C473255C963F /* DatabaseBootstrapperTests.swift */; };
 		88DC2FDA3A741735A5DB8BF4 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C64B85A4A25FEA42EFE31B /* WordDetailView.swift */; };
 		8D39CD7CFB5B7B4061B3DB06 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA2516856A907807138C23 /* AppTheme.swift */; };
 		92A1B0A4C3B48145BA122136 /* DefinitionFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CDF1F1FE752A243FABBDA7 /* DefinitionFormatterTests.swift */; };
@@ -78,6 +79,7 @@
 		54597F2C12F6CE149AE8441B /* AppPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPaths.swift; sourceTree = "<group>"; };
 		56634C9E32386C3D5BD64080 /* suwannaphum_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = suwannaphum_light.ttf; sourceTree = "<group>"; };
 		59EC520C9CA5833CBFB9B167 /* DatabaseUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUpdateService.swift; sourceTree = "<group>"; };
+		5E7005D79585C473255C963F /* DatabaseBootstrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseBootstrapperTests.swift; sourceTree = "<group>"; };
 		6450D7E6032FC98F453C028B /* DictionaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepository.swift; sourceTree = "<group>"; };
 		67E0762F0405C607F0CB118D /* ManifestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManifestParser.swift; sourceTree = "<group>"; };
 		7098E130742BD8F1B04859BE /* KhmerDictionaryUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KhmerDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 		2CC4F030A3A47E366555D1EB /* KhmerDictionaryTests */ = {
 			isa = PBXGroup;
 			children = (
+				5E7005D79585C473255C963F /* DatabaseBootstrapperTests.swift */,
 				A4CDF1F1FE752A243FABBDA7 /* DefinitionFormatterTests.swift */,
 				3AF172362ED27D5A34830F40 /* DictionaryRepositoryTests.swift */,
 				81D5B37740204153A3893EAF /* ManifestParsingTests.swift */,
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				864ED5BCC632082A6614DF81 /* DatabaseBootstrapperTests.swift in Sources */,
 				92A1B0A4C3B48145BA122136 /* DefinitionFormatterTests.swift in Sources */,
 				629104D4A86122FFF4F3BF80 /* DictionaryRepositoryTests.swift in Sources */,
 				128D10BCDBD8B7B469D46EA4 /* ManifestParsingTests.swift in Sources */,
